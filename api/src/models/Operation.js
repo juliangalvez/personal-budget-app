@@ -1,9 +1,7 @@
-const { DataTypes } = require('sequelize');
-// Exportamos una funcion que define el modelo
-// Luego le injectamos la conexion a sequelize.
+const { DataTypes } = require("sequelize");
+
 module.exports = (sequelize) => {
-  // defino el modelo
-  sequelize.define('operation', {
+  sequelize.define("operation", {
     date: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -13,7 +11,12 @@ module.exports = (sequelize) => {
       allowNull: false,
     },
     type: {
-      type: DataTypes.ENUM('Income', 'Expense')
-    }
+      type: DataTypes.ENUM("Income", "Expense"),
+      allowNull: false,
+    },
+    amount: {
+      type: DataTypes.FLOAT,
+      allowNull: false,
+    },
   });
 };
