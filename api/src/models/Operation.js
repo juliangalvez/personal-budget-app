@@ -6,7 +6,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    concept: {
       type: DataTypes.STRING,
       allowNull: false,
     },

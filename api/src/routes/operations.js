@@ -18,17 +18,17 @@ router.get("/", async (req, res) => {
 });
 
 router.post("/add", async (req, res) => {
-  let { date, type, description, amount } = req.body;
+  let { date, type, concept, amount } = req.body;
 
   //const searchOperation = await Operation.findOne({where: {id: id}})
 
   //if(searchOperation === null) { //en caso de que no exista
   try {
-    const newProduct = await Product.findOrCreate({
+    const newOperation = await Operation.findOrCreate({
       where: {
         date: date,
         type: type,
-        description: description,
+        concept: concept,
         amount: amount,
       },
     });

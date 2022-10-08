@@ -1,10 +1,15 @@
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Operations from "./components/Operations";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hola</h1>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+      <Route exact path="/operations" component={Operations} />
+      </div>
+    </BrowserRouter>
   );
 }
 
