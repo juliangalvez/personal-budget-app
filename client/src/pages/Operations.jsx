@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Operations() {
   return (
-    <div>Operations</div>
+    <>
+        <h1>hoa</h1>
+    </>
   )
 }
