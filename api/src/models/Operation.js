@@ -18,5 +18,8 @@ module.exports = (sequelize) => {
       type: DataTypes.FLOAT,
       allowNull: false,
     },
+    category: {
+      type: DataTypes.INTEGER,
+    },
   });
 };
