@@ -1,10 +1,17 @@
-import { GET_OPERATIONS } from "./constants";
+import {
+  GET_OPERATIONS,
+  GET_CATEGORIES,
+  FILTER_BY_CATEGORY,
+} from "./constants";
 
 let initialState = {
   allOperations: [],
   operations: [],
+  categories: [],
   balance: "",
 };
+
+let operationsFiltered = [];
 
 export default function rootReducer(state = initialState, action) {
   switch (action.type) {
@@ -16,13 +23,33 @@ export default function rootReducer(state = initialState, action) {
       }
 
       let sortOps = action.payload.results.sort(dateSorter);
-      let homeOps = sortOps.slice(0, 10);
 
       return {
         ...state,
         allOperations: sortOps,
-        operations: homeOps,
-        balance: action.payload.balance
+        operations: sortOps,
+        balance: action.payload.balance,
+      };
+    case GET_CATEGORIES:
+      return {
+        ...state,
+        categories: action.payload,
+      };
+
+    case FILTER_BY_CATEGORY:
+      let ops = state.allOperations;
+
+      if (action.payload === "All") {
+        operationsFiltered = ops;
+      } else {
+        operationsFiltered = ops.filter((f) =>
+          f.categories[0].name.includes(action.payload)
+        );
+      }
+
+      return {
+        ...state,
+        operations: operationsFiltered,
       };
 
     default:

@@ -3,11 +3,9 @@ import { useDispatch } from "react-redux";
 import { getOperations } from "../redux/actions";
 import AppContext from "../AppContext";
 import styled from "styled-components";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
 
 export default function Home() {
-  const { operations, balance } = useContext(AppContext);
+  const { allOperations, balance } = useContext(AppContext);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,10 +20,10 @@ export default function Home() {
           <div className="balance-amount">{balance} $</div>
         </div>
         <div>
-          {operations && operations.length > 0 ? (
+          {allOperations && allOperations.length > 0 ? (
             <div>
             <h3>Last 10 operations:</h3>
-              {operations.map((op) => {
+              {allOperations.slice(0, 10).map((op) => {
                 return (
                   <OperationDiv key={op.id}>
                     <div className="date">{op.date}</div>
