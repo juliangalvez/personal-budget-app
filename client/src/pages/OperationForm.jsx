@@ -20,7 +20,6 @@ export default function OperationForm() {
   const [disableBtn, setDisableBtn] = useState(true);
   const [catModal, setCatModal] = useState(false);
   const [newCat, setNewCat] = useState("");
-  const [msg, setMsg] = useState("");
 
   const dispatch = useDispatch();
 
@@ -192,7 +191,6 @@ export default function OperationForm() {
           ADD
         </AddBtn>
       </form>
-      <div className="msg">{msg && msg}</div>
     </FormContainer>
   );
 }

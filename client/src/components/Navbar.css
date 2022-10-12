@@ -7,7 +7,7 @@
 }
 
 .menu-bars {
-  margin-left: 2rem;
+  margin-left: 1rem;
   font-size: 2rem;
   background: none;
   padding-top: 6px;
@@ -70,4 +70,10 @@
 
 span {
   margin-left: 16px;
+}
+.location{
+  color: rgb(31, 0, 102);
+  font-size: 32px;
+  margin: auto;
+  padding-right: 30px;
 }

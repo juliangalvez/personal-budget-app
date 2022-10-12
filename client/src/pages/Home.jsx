@@ -34,6 +34,7 @@ export default function Home() {
                     >
                       {op.type}
                     </div>
+                    <div className="category">{op.categories[0].name}</div>
                     <div className="amount">
                       {op.type === "Income"
                         ? `${op.amount} $`
@@ -141,5 +142,11 @@ const OperationDiv = styled.div`
   .close {
     font-size: 1.8rem;
     cursor: pointer;
+  }
+  .category {
+    font-size: 16px;
+    text-align: center;
+    align-self: center;
+    width: 25%;
   }
 `;

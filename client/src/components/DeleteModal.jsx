@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 
 export default function EditModal({ setDeleteModal, setDeleteItem }) {
-  const [input, setInput] = useState("");
 
   function handleClose() {
     setDeleteModal(false);

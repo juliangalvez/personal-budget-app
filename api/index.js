@@ -86,7 +86,7 @@ async function precarga() {
       category: 5,
     },
   ]);
-  
+  console.log("Operations preloaded")
   await operations[0].addCategory(1);
   await operations[1].addCategory(1);
   await operations[2].addCategory(1);
